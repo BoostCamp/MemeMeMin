@@ -160,7 +160,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         self.activeTextField = nil
-        unsubscribeFromKeyboardNotifications() 
+        unsubscribeFromKeyboardNotifications()
     }
 
     
