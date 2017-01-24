@@ -161,6 +161,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.view.endEditing(true)
         self.activeTextField = nil
         unsubscribeFromKeyboardNotifications()
+        
     }
 
     
