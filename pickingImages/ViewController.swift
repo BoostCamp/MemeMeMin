@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     var activeTextField: UITextField!
 
     let memeTextAttributes:[String:Any] = [
@@ -39,10 +41,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         subscribeToKeyboardNotifications()
         
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        //self.shareButton.isEnabled = false
+        self.shareButton.isEnabled = false
         
         // TODO: delete this code when CreateMemeViewController is used at the main view controller
-        //self.cancelButton.isEnabled = false
+        self.cancelButton.isEnabled = false
         
         self.topTextField.defaultTextAttributes = memeTextAttributes
         self.topTextField.textAlignment = .center
@@ -57,12 +59,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     //#keyboard
     func keyboardWillShow(_ notification:Notification) {
-        
-        view.frame.origin.y = 0 - getKeyboardHeight(notification)
+        if bottomTextField.isFirstResponder {
+        view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     func keyboardWillHide(_ notification:Notification) {
-        
-        view.frame.origin.y = 0 + getKeyboardHeight(notification)
+        if bottomTextField.isFirstResponder {
+            view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         
@@ -153,14 +157,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         self.activeTextField = nil
-        unsubscribeFromKeyboardNotifications()
+        //unsubscribeFromKeyboardNotifications()
         return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         self.activeTextField = nil
-        unsubscribeFromKeyboardNotifications()
+        //unsubscribeFromKeyboardNotifications()
         
     }
 
