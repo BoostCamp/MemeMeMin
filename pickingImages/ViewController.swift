@@ -26,6 +26,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeWidthAttributeName: -3.0
     ]
     
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.topTextField.delegate = self
@@ -60,7 +63,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //#keyboard
     func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isFirstResponder {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = 0 - getKeyboardHeight(notification)
         }
     }
     func keyboardWillHide(_ notification:Notification) {
@@ -78,18 +81,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func subscribeToKeyboardNotifications() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-       
+       NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
 
     }
     
     func unsubscribeFromKeyboardNotifications() {
         
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+
     }
 
     func save() {
         // Create the meme
-       // let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        //let meme = Meme(top: topTextField.text!, bottom: bottomTextField.text!, image: imageView.image, memedImage: memedImage)
+        
+        // Add it to the memes array in the Application Delegate
+       // let object = UIApplication.shared.delegate
+      //  let appDelegate = object as! AppDelegate
+        //appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
@@ -137,9 +147,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imageView.image = selectedImage
             dismiss(animated: true, completion: nil)
         }
-//        self.dismiss(animated: true) {
-//            self.shareButton.isEnabled = true
-//        }
+        self.dismiss(animated: true) {
+            self.shareButton.isEnabled = true
+        }
     }
     
     
