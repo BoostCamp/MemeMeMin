@@ -26,7 +26,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeWidthAttributeName: -3.0
     ]
     
-   
+    struct Meme {
+        var topText : String
+        var bottomText : String
+        var image : UIImage
+        var memedImage : UIImage
+    }
+    
     
     
     override func viewDidLoad() {
@@ -44,10 +50,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         subscribeToKeyboardNotifications()
         
         self.cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        self.shareButton.isEnabled = false
         
-        // TODO: delete this code when CreateMemeViewController is used at the main view controller
-        self.cancelButton.isEnabled = false
+        if imageView != nil, (imageView.image != nil) {
+            self.shareButton.isEnabled = true
+            self.cancelButton.isEnabled = true
+            
+        }else{
+            self.shareButton.isEnabled = false
+            // TODO: delete this code when CreateMemeViewController is used at the main view controller
+            self.cancelButton.isEnabled = false}
         
         self.topTextField.defaultTextAttributes = memeTextAttributes
         self.topTextField.textAlignment = .center
@@ -92,14 +103,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
 
-    func save() {
+    func save(memedImage: UIImage) {
         // Create the meme
-        //let meme = Meme(top: topTextField.text!, bottom: bottomTextField.text!, image: imageView.image, memedImage: memedImage)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: memedImage)
         
-        // Add it to the memes array in the Application Delegate
-       // let object = UIApplication.shared.delegate
-      //  let appDelegate = object as! AppDelegate
-        //appDelegate.memes.append(meme)
+        //..Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        //AppDelegate.meme.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
@@ -116,9 +127,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         return memedImage
     }
+    @IBAction func shareMeme(sender: UIBarButtonItem) {
+        let memedImage = generateMemedImage()
+        let textMessage = UIActivityType.message
+        //message로 공유하기 시도 벗 잇 이즌 웤
+        let shareController = UIActivityViewController(activityItems: [memedImage, textMessage], applicationActivities: nil)
+        
+        // = [UIActivityType.message]
+        shareController.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> Void in
+            if (completed) {
+                self.save(memedImage: memedImage)
+            }
+        }
+        
+        present(shareController, animated: true, completion: nil)
+        
+      
+        
+        
+        
+    }
     
-    
-    
+    @IBAction func cancel(_ sender: Any) {
+        imageView.image = nil
+        topTextField.text="TOP"
+        bottomTextField.text="Bottom"
+        cancelButton.isEnabled=false
+        shareButton.isEnabled=false
+        
+        
+    }
     
 
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
@@ -142,14 +180,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             //self.imageView.image = selectedImage
-            
-            imageView.contentMode = .scaleAspectFit
+            //크기 맞춰줄 필요 없어서 제외
+            //imageView.contentMode = .scaleAspectFit
             imageView.image = selectedImage
             dismiss(animated: true, completion: nil)
-        }
-        self.dismiss(animated: true) {
             self.shareButton.isEnabled = true
+
         }
+        
     }
     
     
