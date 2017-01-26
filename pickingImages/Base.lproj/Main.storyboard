@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="-2248" y="-205"/>
         </scene>
-        <!--Title-->
+        <!--TableView-->
         <scene sceneID="eDj-Pl-bTa">
             <objects>
-                <tableViewController id="uiN-TH-9Mz" sceneMemberID="viewController">
+                <tableViewController id="uiN-TH-9Mz" customClass="MemeMeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZuB-KC-0A9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +153,7 @@
                             <outlet property="delegate" destination="uiN-TH-9Mz" id="qRT-cc-eFk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="0S3-UW-jd4">
+                    <navigationItem key="navigationItem" title="TableView" id="0S3-UW-jd4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LNT-R3-FMt">
                             <connections>
                                 <segue destination="E7y-9j-YiI" kind="showDetail" id="ipH-zP-5kw"/>
@@ -182,11 +182,11 @@
             </objects>
             <point key="canvasLocation" x="-2221" y="569"/>
         </scene>
-        <!--Title-->
+        <!--CollectionView-->
         <scene sceneID="QUb-wq-knX">
             <objects>
-                <collectionViewController id="qLP-3d-j3F" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xJz-Tv-A1v">
+                <collectionViewController id="qLP-3d-j3F" customClass="MemeMeCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xJz-Tv-A1v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -211,7 +211,7 @@
                             <outlet property="delegate" destination="qLP-3d-j3F" id="JS4-2u-bEn"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="qr1-NC-Q8s">
+                    <navigationItem key="navigationItem" title="CollectionView" id="qr1-NC-Q8s">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cbh-Dz-wB0">
                             <connections>
                                 <segue destination="E7y-9j-YiI" kind="showDetail" id="JZM-HT-0AL"/>
