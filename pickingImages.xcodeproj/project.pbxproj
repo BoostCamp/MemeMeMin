@@ -17,6 +17,7 @@
 		3EA1F1F71E3A5C6C00A3184D /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1F1F61E3A5C6C00A3184D /* Meme.swift */; };
 		3EA1F1F91E3AF5F900A3184D /* MemeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1F1F81E3AF5F900A3184D /* MemeTableCell.swift */; };
 		3EA1F1FB1E3AF64500A3184D /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1F1FA1E3AF64500A3184D /* MemeDetailViewController.swift */; };
+		3EA1F1FD1E3C001900A3184D /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1F1FC1E3C001900A3184D /* MemeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3EA1F1F61E3A5C6C00A3184D /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		3EA1F1F81E3AF5F900A3184D /* MemeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableCell.swift; sourceTree = "<group>"; };
 		3EA1F1FA1E3AF64500A3184D /* MemeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
+		3EA1F1FC1E3C001900A3184D /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				3EA1F1FA1E3AF64500A3184D /* MemeDetailViewController.swift */,
 				3EA1F1F81E3AF5F900A3184D /* MemeTableCell.swift */,
 				3EA1F1F41E3A2FAE00A3184D /* MemeMeCollectionViewController.swift */,
+				3EA1F1FC1E3C001900A3184D /* MemeCollectionViewCell.swift */,
 				3E81A1A51E36F0A1000B5DE9 /* Assets.xcassets */,
 				3E81A1A71E36F0A1000B5DE9 /* LaunchScreen.storyboard */,
 				3E81A1AA1E36F0A1000B5DE9 /* Info.plist */,
@@ -153,6 +156,7 @@
 			files = (
 				3EA1F1F51E3A2FAE00A3184D /* MemeMeCollectionViewController.swift in Sources */,
 				3E81A1A11E36F0A1000B5DE9 /* MemeMeViewController.swift in Sources */,
+				3EA1F1FD1E3C001900A3184D /* MemeCollectionViewCell.swift in Sources */,
 				3EA1F1F91E3AF5F900A3184D /* MemeTableCell.swift in Sources */,
 				3E81A19F1E36F0A1000B5DE9 /* AppDelegate.swift in Sources */,
 				3EA1F1FB1E3AF64500A3184D /* MemeDetailViewController.swift in Sources */,

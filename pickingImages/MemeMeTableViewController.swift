@@ -26,21 +26,6 @@ class MemeMeTableViewController: UITableViewController {
     
     }
     
-//    override func viewWillAppear(_ animated: Bool)
-//    {
-//        print("viewWillAppear appear&memesArrayNum")//,appDelegate.memesArray.count)
-//        memes = appDelegate.memesArray
-//
-//        super.viewWillAppear(animated)
-//        
-//        // Noticed sometimes when exiting the Meme Edit view, even though the MEME was saved to the app delegate,
-//        // the collection didn't load the new image and refresh, so this is a fix for that
-//       //self.tableView.reloadData()
-//       //reloadInputViews()
-//        //self.reloadInputViews()
-//        
-//    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         print(memes.count)
@@ -64,9 +49,14 @@ class MemeMeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-        //MemeDetailController.theMeme = memes[(indexPath as NSIndexPath).row]
-       // MemeDetailViewController.theMeme = me
-        self.navigationController!.pushViewController(detailController, animated: true)
+        
+        //MemeDetailViewController.theMeme = memes[(indexPath as NSIndexPath).row]
+       //MemeDetailViewController.theMeme = me
+        //self.navigationController!.pushViewController(detailController, animated: true)
+//        
+//        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//        detailController.meme = memes[(indexPath as NSIndexPath).row]
+//        self.navigationController!.pushViewController(detailController, animated: true)
     }
     
     @IBAction func addButton(_ sender: Any) {

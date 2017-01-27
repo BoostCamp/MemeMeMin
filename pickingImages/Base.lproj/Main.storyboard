@@ -237,7 +237,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dVt-sb-eje">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dVt-sb-eje" customClass="MemeCollectionViewCell" customModule="pickingImages" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="142" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -245,11 +245,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9T-nu-vK2">
-                                            <rect key="frame" x="-95" y="-39" width="326" height="195"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="142" height="107"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOT-N4-SSV">
+                                            <rect key="frame" x="50" y="127" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
+                                <connections>
+                                    <outlet property="cellImage" destination="T9T-nu-vK2" id="s2g-Op-T8R"/>
+                                    <outlet property="cellLabel" destination="VOT-N4-SSV" id="F84-7V-R1l"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -264,10 +275,40 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="Zio-J5-rTT" id="vtU-0r-1rI"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwk-FK-LJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1170.4000000000001" y="604.94752623688157"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="TlC-aI-Mb8">
+            <objects>
+                <viewController id="LMM-2G-6yq" customClass="MemeDetailViewController" customModule="pickingImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KhJ-ig-0LS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vaz-ya-FWH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cD0-qN-173">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-3j-8v6">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="p1B-3j-8v6" id="4Qt-PE-ph9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QoK-3t-vg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-307" y="1016"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2iS-Lg-HkR">
@@ -294,6 +335,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TkM-NV-pSx"/>
+        <segue reference="pAt-r9-EHg"/>
     </inferredMetricsTieBreakers>
 </document>

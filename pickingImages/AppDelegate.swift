@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var memesArray = [Meme]()
     override init() {
         super.init()
-        
+        memesArray.append( Meme(topText: "Test", bottomText: "Image", image : #imageLiteral(resourceName: "sampleImg"),  memedImage:#imageLiteral(resourceName: "sampleImg")) )
         MemeMeTableViewController.description()
     }
    
