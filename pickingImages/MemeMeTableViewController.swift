@@ -11,36 +11,35 @@ import UIKit
 
 class MemeMeTableViewController: UITableViewController {
     
+    //var appDelegate: AppDelegate!
+    var memes : [Meme]!
     
-    
-    
-    var appDelegate: AppDelegate!
-    var memes: [Meme]!
-    
+   
     override func viewDidLoad()
     {
         
         super.viewDidLoad()
-        //appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memesArray
         print(memes.count)
+        print("memememe")
     
     }
     
-    override func viewWillAppear(_ animated: Bool)
-    {
-        print("viewWillAppear appear&memesArrayNum")//,appDelegate.memesArray.count)
-        memes = appDelegate.memesArray
-
-        super.viewWillAppear(animated)
-        
-        // Noticed sometimes when exiting the Meme Edit view, even though the MEME was saved to the app delegate,
-        // the collection didn't load the new image and refresh, so this is a fix for that
-       //self.tableView.reloadData()
-       //reloadInputViews()
-        //self.reloadInputViews()
-        
-    }
+//    override func viewWillAppear(_ animated: Bool)
+//    {
+//        print("viewWillAppear appear&memesArrayNum")//,appDelegate.memesArray.count)
+//        memes = appDelegate.memesArray
+//
+//        super.viewWillAppear(animated)
+//        
+//        // Noticed sometimes when exiting the Meme Edit view, even though the MEME was saved to the app delegate,
+//        // the collection didn't load the new image and refresh, so this is a fix for that
+//       //self.tableView.reloadData()
+//       //reloadInputViews()
+//        //self.reloadInputViews()
+//        
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -49,16 +48,27 @@ class MemeMeTableViewController: UITableViewController {
     }
     
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : MemeTableCell = tableView.dequeueReusableCell( withIdentifier: "MemeTableCell", for: indexPath ) as! MemeTableCell
+        let cell = tableView.dequeueReusableCell( withIdentifier: "MemeTableCell")!//, for: indexPath ) as! MemeTableCell
         let theMeme = self.memes[(indexPath as NSIndexPath).row]
-        cell.imgMeme?.image = theMeme.memedImage
-        cell.lblTop?.text=theMeme.topText
-        cell.lblBottom?.text=theMeme.bottomText
-        
-        return cell
+    
+        //cell.imageView = theMeme.memedImage
+        cell.detailTextLabel?.text = theMeme.bottomText
+        cell.imageView?.image = theMeme.memedImage
+        cell.textLabel?.text = theMeme.topText
+    
+    
+    
+    return cell
         
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        //MemeDetailController.theMeme = memes[(indexPath as NSIndexPath).row]
+       // MemeDetailViewController.theMeme = me
+        self.navigationController!.pushViewController(detailController, animated: true)
+    }
+    
     @IBAction func addButton(_ sender: Any) {
         
     }    /*

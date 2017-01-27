@@ -13,6 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var memesArray = [Meme]()
+    override init() {
+        super.init()
+        
+        MemeMeTableViewController.description()
+    }
    
 
 

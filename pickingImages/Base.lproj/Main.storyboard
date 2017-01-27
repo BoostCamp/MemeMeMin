@@ -148,68 +148,43 @@
         <!--MemeMeTableViewController-->
         <scene sceneID="eDj-Pl-bTa">
             <objects>
-                <tableViewController id="uiN-TH-9Mz" userLabel="MemeMeTableViewController" customClass="MemeMeTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" id="XJU-Pf-VBU">
+                <tableViewController id="uiN-TH-9Mz" userLabel="MemeMeTableViewController" customClass="MemeMeTableViewController" customModule="pickingImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="XJU-Pf-VBU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" rowHeight="139" id="L0d-RW-RPh" customClass="MemeTableCell" customModule="pickingImages" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="139"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" rowHeight="71" id="L0d-RW-RPh" customClass="MemeTableCell" customModule="pickingImages" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L0d-RW-RPh" id="mJ0-hm-aBg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-cK-y1x">
-                                            <rect key="frame" x="0.0" y="-6" width="375" height="139"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HJq-f3-lvR" userLabel="imgMeme">
-                                                    <rect key="frame" x="0.0" y="0.0" width="191" height="139"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="191" id="qta-yZ-owH"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KjG-Wm-Pzo">
-                                                    <rect key="frame" x="191" y="0.0" width="184" height="139"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-Dy-2kk" userLabel="topTextLabel">
-                                                            <rect key="frame" x="0.0" y="0.0" width="184" height="69.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phn-VV-GYo" userLabel="bottomTextLabel">
-                                                            <rect key="frame" x="0.0" y="69.5" width="184" height="69.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="tZh-Dy-2kk" firstAttribute="height" secondItem="Phn-VV-GYo" secondAttribute="height" id="P3w-R6-ByX"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="HJq-f3-lvR" firstAttribute="height" secondItem="VRw-cK-y1x" secondAttribute="height" id="NKf-UE-Va1"/>
-                                            </constraints>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW0-kr-fXJ" userLabel="Title">
+                                            <rect key="frame" x="0.0" y="24.5" width="375" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smh-Rp-71Q" userLabel="Detail">
+                                            <rect key="frame" x="-0.5" y="8" width="375" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="VRw-cK-y1x" firstAttribute="leading" secondItem="mJ0-hm-aBg" secondAttribute="leading" id="O0Y-7U-XRi"/>
-                                        <constraint firstItem="VRw-cK-y1x" firstAttribute="top" secondItem="mJ0-hm-aBg" secondAttribute="topMargin" constant="-14" id="XWm-Te-nTJ"/>
+                                        <constraint firstItem="Smh-Rp-71Q" firstAttribute="top" secondItem="mJ0-hm-aBg" secondAttribute="topMargin" id="5NT-iO-j3e"/>
+                                        <constraint firstItem="gW0-kr-fXJ" firstAttribute="width" secondItem="mJ0-hm-aBg" secondAttribute="width" id="9BZ-nQ-wym"/>
+                                        <constraint firstItem="Smh-Rp-71Q" firstAttribute="width" secondItem="mJ0-hm-aBg" secondAttribute="width" id="9D9-mu-yIG"/>
+                                        <constraint firstItem="gW0-kr-fXJ" firstAttribute="centerX" secondItem="Smh-Rp-71Q" secondAttribute="centerX" id="BSG-9r-KDz"/>
+                                        <constraint firstItem="Smh-Rp-71Q" firstAttribute="height" secondItem="gW0-kr-fXJ" secondAttribute="height" id="cKT-2C-HhN"/>
+                                        <constraint firstAttribute="trailing" secondItem="gW0-kr-fXJ" secondAttribute="trailing" id="i9B-NZ-Csw"/>
+                                        <constraint firstItem="gW0-kr-fXJ" firstAttribute="leading" secondItem="mJ0-hm-aBg" secondAttribute="leading" id="iYJ-ON-MDO"/>
+                                        <constraint firstItem="gW0-kr-fXJ" firstAttribute="centerY" secondItem="mJ0-hm-aBg" secondAttribute="centerY" id="yhU-NI-Krh"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="VRw-cK-y1x" firstAttribute="width" secondItem="L0d-RW-RPh" secondAttribute="width" id="Qr2-vS-cNq"/>
-                                    <constraint firstItem="VRw-cK-y1x" firstAttribute="height" secondItem="L0d-RW-RPh" secondAttribute="height" id="dtN-qN-BE1"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="imgMeme" destination="HJq-f3-lvR" id="dGw-dL-T4i"/>
-                                    <outlet property="lblBottom" destination="Phn-VV-GYo" id="vS8-Ji-Gr7"/>
-                                    <outlet property="lblTop" destination="tZh-Dy-2kk" id="8J2-XJ-lRJ"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -250,8 +225,8 @@
         <!--MemeMeCollectionViewController-->
         <scene sceneID="QUb-wq-knX">
             <objects>
-                <collectionViewController id="qLP-3d-j3F" userLabel="MemeMeCollectionViewController" customClass="MemeMeCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xJz-Tv-A1v">
+                <collectionViewController id="qLP-3d-j3F" userLabel="MemeMeCollectionViewController" customClass="MemeMeCollectionViewController" customModule="pickingImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xJz-Tv-A1v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -319,6 +294,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pAt-r9-EHg"/>
+        <segue reference="TkM-NV-pSx"/>
     </inferredMetricsTieBreakers>
 </document>
