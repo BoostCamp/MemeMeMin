@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
+class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
 
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
@@ -100,15 +100,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func save(memedImage: UIImage) {
         // Create the meme
-        memeImage = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: memedImage)
-        
-        //..Add it to the memes array in the Application Delegate
-       // let object = UIApplication.shared.delegate
-       // let appDelegate = object as! AppDelegate
-        //AppDelegate.meme.append(meme)
-        ( UIApplication.shared.delegate as! AppDelegate ).memesArray.append( self.memeImage )
 
-    
+        memeImage = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: memedImage)
+        //..Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+
+       // AppDelegate.meme.append(memeImage)
+        appDelegate.memesArray.append(memeImage)
+        //( UIApplication.shared.delegate as! AppDelegate ).memesArray.append( self.memeImage )
+
+        //let _ = navigationController?.popToRootViewController(animated: true)
     }
     
     func generateMemedImage() -> UIImage {
@@ -141,8 +143,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(shareController, animated: true, completion: nil)
         
       
-        
-        
+      //  let _ = navigationController?.popToRootViewController(animated: true)
+
+
         
     }
     
@@ -216,8 +219,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
 
-    
-    
+    @IBAction func save(_ sender: Any) {
+        
+        
+        
+        
+        
+    }
+        
    
     
 }
