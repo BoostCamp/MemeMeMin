@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //var memes = [Meme]()
+    var memesArray = [Meme]()
    // let appDelegate = UIApplication.shared.delegate as! AppDelegate
    // memes = appDelegate.memes
 

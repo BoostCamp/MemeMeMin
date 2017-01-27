@@ -14,6 +14,7 @@
 		3E81A1A91E36F0A1000B5DE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E81A1A71E36F0A1000B5DE9 /* LaunchScreen.storyboard */; };
 		3EA1F1F31E3A2F9D00A3184D /* MemeMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1F1F21E3A2F9D00A3184D /* MemeMeTableViewController.swift */; };
 		3EA1F1F51E3A2FAE00A3184D /* MemeMeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1F1F41E3A2FAE00A3184D /* MemeMeCollectionViewController.swift */; };
+		3EA1F1F71E3A5C6C00A3184D /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1F1F61E3A5C6C00A3184D /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3E81A1AA1E36F0A1000B5DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EA1F1F21E3A2F9D00A3184D /* MemeMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeMeTableViewController.swift; sourceTree = "<group>"; };
 		3EA1F1F41E3A2FAE00A3184D /* MemeMeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeMeCollectionViewController.swift; sourceTree = "<group>"; };
+		3EA1F1F61E3A5C6C00A3184D /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3E81A1A51E36F0A1000B5DE9 /* Assets.xcassets */,
 				3E81A1A71E36F0A1000B5DE9 /* LaunchScreen.storyboard */,
 				3E81A1AA1E36F0A1000B5DE9 /* Info.plist */,
+				3EA1F1F61E3A5C6C00A3184D /* Meme.swift */,
 			);
 			path = pickingImages;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				3E81A1A11E36F0A1000B5DE9 /* ViewController.swift in Sources */,
 				3E81A19F1E36F0A1000B5DE9 /* AppDelegate.swift in Sources */,
 				3EA1F1F31E3A2F9D00A3184D /* MemeMeTableViewController.swift in Sources */,
+				3EA1F1F71E3A5C6C00A3184D /* Meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

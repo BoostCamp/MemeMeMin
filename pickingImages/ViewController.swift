@@ -26,12 +26,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeWidthAttributeName: -3.0
     ]
     
-    struct Meme {
-        var topText : String
-        var bottomText : String
-        var image : UIImage
-        var memedImage : UIImage
-    }
+    var memeImage: Meme!
     
     
     
@@ -105,12 +100,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func save(memedImage: UIImage) {
         // Create the meme
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: memedImage)
+        memeImage = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: memedImage)
         
         //..Add it to the memes array in the Application Delegate
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
+       // let object = UIApplication.shared.delegate
+       // let appDelegate = object as! AppDelegate
         //AppDelegate.meme.append(meme)
+        ( UIApplication.shared.delegate as! AppDelegate ).memesArray.append( self.memeImage )
+
+    
     }
     
     func generateMemedImage() -> UIImage {
@@ -154,7 +152,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.text="Bottom"
         cancelButton.isEnabled=false
         shareButton.isEnabled=false
-        
+        if memeImage != nil{
+            memeImage = nil
+        }
         
     }
     

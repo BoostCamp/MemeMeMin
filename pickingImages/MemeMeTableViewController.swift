@@ -13,7 +13,7 @@ class MemeMeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("2")
         // Do any additional setup after loading the view.
     }
     
