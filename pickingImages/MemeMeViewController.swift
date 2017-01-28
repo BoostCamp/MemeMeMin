@@ -118,10 +118,14 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         // TODO: Hide toolbar and navbar
         
         // Render view to an image
+        self.navigationController!.isNavigationBarHidden=true
         UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        
+       view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        self.navigationController!.isNavigationBarHidden=false
+
         
         // TODO: Show toolbar and navbar
         

@@ -25,6 +25,7 @@ class MemeMeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView?.reloadData()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memesArray
 
@@ -43,6 +44,12 @@ class MemeMeCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("        super.viewWillAppear(animated)")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memesArray
+
+        self.collectionView?.reloadData()
+        
+        //collectionView?.reloadData()
         super.viewWillAppear(animated)
         print("        super.viewWillAppear(animated) terminated")
 
