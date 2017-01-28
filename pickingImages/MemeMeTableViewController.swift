@@ -39,7 +39,7 @@ class MemeMeTableViewController: UITableViewController {
         //cell.imageView = theMeme.memedImage
         cell.detailTextLabel?.text = theMeme.bottomText
         cell.imageView?.image = theMeme.memedImage
-        cell.textLabel?.text = theMeme.topText
+        cell.textLabel?.text = theMeme.topText + " " + theMeme.bottomText
     
     
     
