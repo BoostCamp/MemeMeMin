@@ -58,6 +58,13 @@ class MemeMeTableViewController: UITableViewController {
         self.navigationController!.pushViewController(detailController, animated: true)
     }
     
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            memes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     @IBAction func addButton(_ sender: Any) {
         
     }    /*
