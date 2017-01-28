@@ -127,11 +127,11 @@
             </objects>
             <point key="canvasLocation" x="-3247" y="253"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="IRz-ZO-b1v">
             <objects>
                 <navigationController id="KV2-sN-Yqd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RhF-SQ-1dc"/>
+                    <tabBarItem key="tabBarItem" selectedImage="tableView" id="RhF-SQ-1dc"/>
                     <navigationItem key="navigationItem" id="sJZ-iI-2PD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sxq-jd-177">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -278,7 +278,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="TlC-aI-Mb8">
             <objects>
-                <viewController id="LMM-2G-6yq" customClass="MemeDetailViewController" customModule="pickingImages" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="LMM-2G-6yq" customClass="MemeDetailViewController" customModule="pickingImages" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KhJ-ig-0LS"/>
                         <viewControllerLayoutGuide type="bottom" id="Vaz-ya-FWH"/>
@@ -326,6 +326,9 @@
             <point key="canvasLocation" x="-151.19999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tableView" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TkM-NV-pSx"/>
     </inferredMetricsTieBreakers>

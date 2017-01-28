@@ -54,9 +54,8 @@ class MemeMeTableViewController: UITableViewController {
        //MemeDetailViewController.theMeme = me
         //self.navigationController!.pushViewController(detailController, animated: true)
 //        
-//        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//        detailController.meme = memes[(indexPath as NSIndexPath).row]
-//        self.navigationController!.pushViewController(detailController, animated: true)
+        detailController.theMeme = memes[(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(detailController, animated: true)
     }
     
     @IBAction func addButton(_ sender: Any) {
