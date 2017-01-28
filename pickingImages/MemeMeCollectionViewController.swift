@@ -9,6 +9,12 @@
 
 import UIKit
 
+class MemeCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var cellImage: UIImageView!
+    
+    
+}
 
 class MemeMeCollectionViewController: UICollectionViewController {
     
@@ -21,19 +27,26 @@ class MemeMeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memesArray
-        
+
         let space:CGFloat = 3.0
+
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        
+
         flowLayout.minimumInteritemSpacing = space
+
         flowLayout.minimumLineSpacing = space
+
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("        super.viewWillAppear(animated)")
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        print("        super.viewWillAppear(animated) terminated")
+
+        //self.tabBarController?.tabBar.isHidden = false
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,15 +54,18 @@ class MemeMeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("collectionView start")
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-        let meme = memes[(indexPath as NSIndexPath).row]
-        
-        cell.cellImage?.image = meme.memedImage
-        cell.cellLabel.text = meme.topText
+        //let cell = tableView.dequeueReusableCell( withIdentifier: "MemeTableCell")!//, for: indexPath ) as! MemeTableCell
+        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell( withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
+        print("meme call")
+        let meme = memes[indexPath.item]
+        print("meme image set")
+        cell.cellImage.image=meme.memedImage
+        print("return cell")
         
         return cell
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
