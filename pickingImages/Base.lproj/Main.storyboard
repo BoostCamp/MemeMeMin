@@ -127,11 +127,11 @@
             </objects>
             <point key="canvasLocation" x="-3247" y="253"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Table-->
         <scene sceneID="IRz-ZO-b1v">
             <objects>
                 <navigationController id="KV2-sN-Yqd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="tableView" selectedImage="tableView" id="RhF-SQ-1dc"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="tableView" selectedImage="tableView" id="RhF-SQ-1dc"/>
                     <navigationItem key="navigationItem" id="sJZ-iI-2PD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sxq-jd-177">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -205,11 +205,11 @@
             </objects>
             <point key="canvasLocation" x="-1143.2" y="-190.25487256371815"/>
         </scene>
-        <!--Item-->
+        <!--Collection-->
         <scene sceneID="Q63-xE-5Gd">
             <objects>
                 <navigationController id="Bt0-LF-ltt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="collectionView" id="x25-mv-ghb"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="collectionView" id="x25-mv-ghb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NRB-aD-mcX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
