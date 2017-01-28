@@ -6,4 +6,4 @@ Original app에서 추가된 점
 
 
 
-동영상 주소 : https://youtu.be/hk_XLYwR1pY
+동영상 주소 : https://youtu.be/pkAPYWXL8ao
