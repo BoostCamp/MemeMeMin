@@ -34,12 +34,10 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Check whether the application could use camera
         super.viewWillAppear(animated)
         
         subscribeToKeyboardNotifications()
@@ -52,7 +50,6 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
             
         }else{
             self.shareButton.isEnabled = false
-            // TODO: delete this code when CreateMemeViewController is used at the main view controller
             self.cancelButton.isEnabled = false}
         
         self.topTextField.defaultTextAttributes = memeTextAttributes
@@ -102,22 +99,14 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Create the meme
 
         memeImage = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: memedImage)
-        //..Add it to the memes array in the Application Delegate
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
-
-       // AppDelegate.meme.append(memeImage)
         appDelegate.memesArray.append(memeImage)
-        //( UIApplication.shared.delegate as! AppDelegate ).memesArray.append( self.memeImage )
-
-        //let _ = navigationController?.popToRootViewController(animated: true)
+       
     }
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
-        
-        // Render view to an image
         self.navigationController!.isNavigationBarHidden=true
         UIGraphicsBeginImageContext(self.view.frame.size)
         
@@ -127,29 +116,19 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.navigationController!.isNavigationBarHidden=false
 
         
-        // TODO: Show toolbar and navbar
-        
         return memedImage
     }
     @IBAction func shareMeme(sender: UIBarButtonItem) {
         let memedImage = generateMemedImage()
         let textMessage = UIActivityType.message
-        //message로 공유하기 시도 벗 잇 이즌 웤
         let shareController = UIActivityViewController(activityItems: [memedImage, textMessage], applicationActivities: nil)
-        
-        // = [UIActivityType.message]
-        shareController.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> Void in
+            shareController.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> Void in
             if (completed) {
                 self.save(memedImage: memedImage)
             }
         }
         
         present(shareController, animated: true, completion: nil)
-        
-      
-      //  let _ = navigationController?.popToRootViewController(animated: true)
-
-
         
     }
     
@@ -186,9 +165,6 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            //self.imageView.image = selectedImage
-            //크기 맞춰줄 필요 없어서 제외
-            //imageView.contentMode = .scaleAspectFit
             imageView.image = selectedImage
             dismiss(animated: true, completion: nil)
             self.shareButton.isEnabled = true
@@ -198,10 +174,8 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     
-    // MARK: Delegate methods of UITextFieldDelegate
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        // TODO: clear when textField.text == "TOP" or "BOTTOM"
         if textField.text! == "TOP" || textField.text! == "BOTTOM" {
             textField.text = ""
         }
@@ -212,14 +186,12 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         self.activeTextField = nil
-        //unsubscribeFromKeyboardNotifications()
         return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         self.activeTextField = nil
-        //unsubscribeFromKeyboardNotifications()
         
     }
 

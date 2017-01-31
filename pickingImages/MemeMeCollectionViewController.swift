@@ -43,17 +43,10 @@ class MemeMeCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("        super.viewWillAppear(animated)")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memesArray
-
         self.collectionView?.reloadData()
-        
-        //collectionView?.reloadData()
         super.viewWillAppear(animated)
-        print("        super.viewWillAppear(animated) terminated")
-
-        //self.tabBarController?.tabBar.isHidden = false
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -61,29 +54,17 @@ class MemeMeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("collectionView start")
-        
-        //let cell = tableView.dequeueReusableCell( withIdentifier: "MemeTableCell")!//, for: indexPath ) as! MemeTableCell
-        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
         let cell = collectionView.dequeueReusableCell( withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-        print("meme call")
         let meme = memes[indexPath.item]
-        print("meme image set")
-        cell.cellImage.image=meme.memedImage
-        print("return cell")
-        
+        cell.cellImage.image=meme.memedImage        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
         
-        // Grab the DetailVC from Storyboard
          let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         
-        //Populate view controller with data from the selected item
         detailController.theMeme = memes[(indexPath as NSIndexPath).row]
-        
-        // Present the view controller using navigation
         navigationController!.pushViewController(detailController, animated: true)
         
     }
